@@ -1,7 +1,10 @@
 import './App.css'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
+
+import useClipboardUpdate from './hooks/useClipboardUpdate'
+
 import { Container } from './style'
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 
 // declare global {
 //   interface Window {
@@ -12,29 +15,13 @@ import Home from './pages/Home'
 // }
 
 const App = () => {
-  const [clipboardText, setClipboardText] = useState<string>('')
-
-  useEffect(() => {
-    const clipboard = window.require('electron').clipboard
-    let currentClipboardText = clipboard.readText()
-    setClipboardText(currentClipboardText)
-
-    const interval = setInterval(() => {
-      const newClipboardText = clipboard.readText()
-      if (newClipboardText !== currentClipboardText) {
-        currentClipboardText = newClipboardText
-        setClipboardText(newClipboardText)
-      }
-    }, 1000)
-
-    return () => clearInterval(interval)
-  }, [])
+  const [clipboardText] = useClipboardUpdate(1000)
+  console.log(clipboardText)
 
   return (
     <>
       <Container>
         <Home />
-        {clipboardText}
       </Container>
     </>
   )

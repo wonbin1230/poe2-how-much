@@ -14,6 +14,7 @@ app.whenReady().then(() => {
       preload: path.join(app.getAppPath(), '/dist-electron/preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
+      webSecurity: false,
     }
   })
   // mainWindow.loadFile(path.join(app.getAppPath(), '/dist-react/index.html'))

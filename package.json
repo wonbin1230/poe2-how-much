@@ -1,10 +1,10 @@
 {
-  "name": "poe-how-much",
+  "name": "poe2-how-much",
   "private": true,
   "version": "0.0.1",
   "main": "dist-electron/main.js",
   "author": "Yu",
-  "description": "A tool to search for the price of items in Path of Exile",
+  "description": "A tool to search for the price of items in Path of Exile2",
   "scripts": {
     "dev:react": "vite",
     "dev:electron": "npm run build && electron .",
@@ -16,6 +16,7 @@
     "make": "electron-forge make"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "electron-squirrel-startup": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

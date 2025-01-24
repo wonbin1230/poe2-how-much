@@ -1,7 +1,7 @@
 import { clipboard } from "electron";
 
 window.addEventListener('DOMContentLoaded', () => {
-  clipboard.writeText('Hello, world!')
+  clipboard.writeText('')
 })
 
 // contextBridge.exposeInMainWorld('electronAPI', {
